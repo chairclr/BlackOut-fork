@@ -36,7 +36,7 @@ import java.util.*;
 
 public class HoleFillRewrite extends BlackOutModule {
     public HoleFillRewrite() {
-        super(BlackOut.BLACKOUT, "Hole Fill+", "Automatically is a cunt to your enemies.");
+        super(BlackOut.BLACKOUT, "Hole Fill+", "Automatically fills holes to grief your enemies.");
     }
 
     private final SettingGroup sgGeneral = settings.getDefaultGroup();

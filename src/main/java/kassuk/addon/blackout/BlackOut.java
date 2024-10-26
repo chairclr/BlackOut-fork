@@ -45,16 +45,13 @@ public class BlackOut extends MeteorAddon {
 
     private void initializeModules(Modules modules) {
         modules.add(new AnchorAuraPlus());
-        modules.add(new AnteroTaateli());
         modules.add(new AntiAim());
         modules.add(new AntiCrawl());
         modules.add(new AutoCraftingTable());
         modules.add(new AutoCrystalPlus());
-        modules.add(new AutoEz());
         modules.add(new Automation());
         modules.add(new AutoMend());
         modules.add(new AutoMine());
-        modules.add(new AutoMoan());
         modules.add(new AutoPearl());
         initializeAutoPVP(modules);
         modules.add(new AutoTrapPlus());
@@ -73,7 +70,6 @@ public class BlackOut extends MeteorAddon {
         modules.add(new HoleSnap());
         modules.add(new JesusPlus());
         modules.add(new KillAuraPlus());
-        modules.add(new LightsOut());
         modules.add(new MineESP());
         modules.add(new OffHandPlus());
         modules.add(new PacketFly());
@@ -82,7 +78,6 @@ public class BlackOut extends MeteorAddon {
         modules.add(new PistonCrystal());
         modules.add(new PistonPush());
         modules.add(new PortalGodMode());
-        modules.add(new RPC());
         modules.add(new ScaffoldPlus());
         modules.add(new SelfTrapPlus());
         modules.add(new SoundModifier());
@@ -107,7 +102,6 @@ public class BlackOut extends MeteorAddon {
     }
 
     private void initializeCommands() {
-        Commands.add(new BlackoutGit());
         Commands.add(new Coords());
     }
 
@@ -118,8 +112,6 @@ public class BlackOut extends MeteorAddon {
         hud.register(HudWaterMark.INFO);
         hud.register(Keys.INFO);
         hud.register(TargetHud.INFO);
-        hud.register(Welcomer.INFO);
-        hud.register(OnTope.INFO);
         hud.register(CatGirl.INFO);
     }
 

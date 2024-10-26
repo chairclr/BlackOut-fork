@@ -499,10 +499,9 @@ public class AutoPvp extends BlackOutModule {
     }
 
     private boolean isSpeed(ItemStack stack) {
-        for (Object instance : stack.getItem().getComponents().get(DataComponentTypes.POTION_CONTENTS).getEffects()) {
-            StatusEffectInstance i = (StatusEffectInstance) instance;
+        for (StatusEffectInstance instance : stack.getItem().getComponents().get(DataComponentTypes.POTION_CONTENTS).getEffects()) {
 
-            if (i.getEffectType() == StatusEffects.SPEED) {
+            if (instance.getEffectType() == StatusEffects.SPEED) {
                 return true;
             }
         }
