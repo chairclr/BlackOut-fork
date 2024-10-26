@@ -17,6 +17,7 @@ import meteordevelopment.meteorclient.renderer.Renderer3D;
 import meteordevelopment.meteorclient.renderer.ShapeMode;
 import meteordevelopment.meteorclient.settings.*;
 import meteordevelopment.meteorclient.systems.friends.Friends;
+import meteordevelopment.meteorclient.utils.Utils;
 import meteordevelopment.meteorclient.utils.entity.EntityUtils;
 import meteordevelopment.meteorclient.utils.player.InvUtils;
 import meteordevelopment.meteorclient.utils.render.color.Color;
@@ -1092,7 +1093,7 @@ public class AutoMine extends BlackOutModule {
         ItemStack stack = mc.player.getInventory().getStack(slot);
         float f = mc.player.getInventory().getStack(slot).getMiningSpeedMultiplier(state);
         if (f > 1.0) {
-            int i = EnchantmentHelper.getLevel(Enchantments.EFFICIENCY, stack);
+            int i = Utils.getEnchantmentLevel(stack, Enchantments.EFFICIENCY);
             if (i > 0 && !stack.isEmpty()) f += (float) (i * i + 1);
         }
 
@@ -1108,7 +1109,7 @@ public class AutoMine extends BlackOutModule {
             }
         }
 
-        if (waterCheck.get() && mc.player.isSubmergedInWater() && !EnchantmentHelper.hasAquaAffinity(mc.player)) {
+        if (waterCheck.get() && mc.player.isSubmergedInWater()) {
             f /= 5.0;
         }
 

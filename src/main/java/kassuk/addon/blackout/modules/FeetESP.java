@@ -80,9 +80,9 @@ public class FeetESP extends BlackOutModule {
             if (!self.get() && mc.player == player) return;
 
             render(event, new Vec3d(
-                MathHelper.lerp(mc.getTickDelta(), player.prevX, player.getX()),
-                MathHelper.lerp(mc.getTickDelta(), player.prevY, player.getY()),
-                MathHelper.lerp(mc.getTickDelta(), player.prevZ, player.getZ())
+                MathHelper.lerp(event.tickDelta, player.prevX, player.getX()),
+                MathHelper.lerp(event.tickDelta, player.prevY, player.getY()),
+                MathHelper.lerp(event.tickDelta, player.prevZ, player.getZ())
             ));
         });
     }

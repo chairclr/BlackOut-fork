@@ -94,7 +94,7 @@ public class PacketLogger extends BlackOutModule {
     private String packetMessage(Packet<?> packet) {
         //----------SEND----------//
 
-        if (packet instanceof ClientOptionsC2SPacket p) return "ClientOptions language:" + p.options().language() + " allowsServerListing:" + p.options().allowsServerListing() + " chatColorsEnabled:" + p.options().chatColorsEnabled() + " chatVisibility:" + p.options().chatVisibility().name() + " filtersText:" + p.options().filtersText() + " mainArm:" + p.options().mainArm().name() + " playerModelParts:" + p.options().playerModelParts() + " viewDistance:" + p.options().viewDistance();
+        /* if (packet instanceof ClientOptionsC2SPacket p) return "ClientOptions language:" + p.options().language() + " allowsServerListing:" + p.options().allowsServerListing() + " chatColorsEnabled:" + p.options().chatColorsEnabled() + " chatVisibility:" + p.options().chatVisibility().name() + " filtersText:" + p.options().filtersText() + " mainArm:" + p.options().mainArm().name() + " playerModelParts:" + p.options().playerModelParts() + " viewDistance:" + p.options().viewDistance();
         if (packet instanceof CommonPongC2SPacket p) return "CommonPong parameter:" + p.getParameter();
 // TODO if (packet instanceof CustomPayloadC2SPacket p) return "CustomPayload data:" + p.getData() + " channel:" + p.payload().id();
         if (packet instanceof KeepAliveC2SPacket p) return "KeepAlive id:" + p.getId();
@@ -290,7 +290,7 @@ public class PacketLogger extends BlackOutModule {
 
         if (packet instanceof PingResultS2CPacket p) return "PingResult startTime:" + p.getStartTime();
         if (packet instanceof QueryResponseS2CPacket p) return "QueryResponse description:" + p.metadata().description() + " onlinePlayers" + (p.metadata().players().isPresent() ? p.metadata().players().get().online() : "null") + " maxPlayers" + (p.metadata().players().isPresent() ? p.metadata().players().get().max() : "null");
-
+*/
         return null;
     }
 
@@ -310,13 +310,6 @@ public class PacketLogger extends BlackOutModule {
         StringBuilder builder = new StringBuilder();
         for (Map.Entry<Stat<?>, Integer> o : map.entrySet())
             builder.append(o.getKey().getName()).append(" --- ").append(o.getValue()).append("\n");
-        return builder.toString();
-    }
-
-    private String offers(TradeOfferList offers) {
-        StringBuilder builder = new StringBuilder();
-        for (TradeOffer o : offers)
-            builder.append(o.copySellItem().getItem().getName()).append(" -> ").append(o.getOriginalFirstBuyItem().getItem().getName()).append(" & ").append(o.getSecondBuyItem().getItem().getName()).append("\n");
         return builder.toString();
     }
 

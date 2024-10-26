@@ -6,8 +6,6 @@
     "AccessorMinecraftClient",
     "IBlockSettings",
     "IEntityS2CPacket",
-    "IEntitySetHeadYawS2CPacket",
-    "IEntityStatusS2CPacket",
     "IInteractEntityC2SPacket",
     "IPlayerMoveC2SPacket",
     "IRaycastContext",

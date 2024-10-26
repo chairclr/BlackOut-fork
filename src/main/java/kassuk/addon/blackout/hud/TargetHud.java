@@ -1,11 +1,21 @@
 package kassuk.addon.blackout.hud;
 
+import static meteordevelopment.meteorclient.MeteorClient.mc;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 import kassuk.addon.blackout.BlackOut;
 import kassuk.addon.blackout.utils.RenderUtils;
 import meteordevelopment.meteorclient.MeteorClient;
 import meteordevelopment.meteorclient.events.packets.PacketEvent;
 import meteordevelopment.meteorclient.events.world.TickEvent;
-import meteordevelopment.meteorclient.settings.*;
+import meteordevelopment.meteorclient.settings.ColorSetting;
+import meteordevelopment.meteorclient.settings.DoubleSetting;
+import meteordevelopment.meteorclient.settings.EnumSetting;
+import meteordevelopment.meteorclient.settings.Setting;
+import meteordevelopment.meteorclient.settings.SettingGroup;
 import meteordevelopment.meteorclient.systems.friends.Friends;
 import meteordevelopment.meteorclient.systems.hud.HudElement;
 import meteordevelopment.meteorclient.systems.hud.HudElementInfo;
@@ -24,10 +34,6 @@ import net.minecraft.network.packet.s2c.play.EntityStatusS2CPacket;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RotationAxis;
-
-import java.util.*;
-
-import static meteordevelopment.meteorclient.MeteorClient.mc;
 
 /**
  * @author KassuK
@@ -208,7 +214,7 @@ public class TargetHud extends HudElement {
             // Health
             RenderUtils.text(String.valueOf(Math.round((renderHealth) * 10) / 10f), stack, 20, 81 - mc.textRenderer.fontHeight / 2f, textColor.get().getPacked());
 
-            float barAnimation = MathHelper.lerp(mc.getTickDelta() / 10, lastHp, renderHealth);
+            float barAnimation = MathHelper.lerp(mc.getRenderTickCounter().getTickDelta(true) / 10, lastHp, renderHealth);
 
             float barStart = Math.max(mc.textRenderer.getWidth(String.valueOf(Math.round((renderHealth) * 10) / 10f)),
                 mc.textRenderer.getWidth("36.0")) + 28;

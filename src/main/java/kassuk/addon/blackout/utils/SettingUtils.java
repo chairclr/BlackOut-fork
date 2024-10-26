@@ -5,7 +5,6 @@ import kassuk.addon.blackout.enums.SwingState;
 import kassuk.addon.blackout.enums.SwingType;
 import kassuk.addon.blackout.globalsettings.*;
 import meteordevelopment.meteorclient.systems.modules.Modules;
-import meteordevelopment.meteorclient.utils.Utils;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
@@ -18,7 +17,7 @@ import java.util.function.Predicate;
  * @author OLEPOSSU
  */
 
-public class SettingUtils extends Utils {
+public class SettingUtils {
 
     private static final FacingSettings facing = Modules.get().get(FacingSettings.class);
     private static final RangeSettings range = Modules.get().get(RangeSettings.class);
@@ -26,6 +25,11 @@ public class SettingUtils extends Utils {
     private static final RotationSettings rotation = Modules.get().get(RotationSettings.class);
     private static final ServerSettings server = Modules.get().get(ServerSettings.class);
     private static final SwingSettings swing = Modules.get().get(SwingSettings.class);
+
+    public SettingUtils()
+    {
+        
+    }
 
     //  Range
     public static void registerAttack(Box bb) {range.registerAttack(bb);}
